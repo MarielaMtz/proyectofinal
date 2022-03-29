@@ -35,7 +35,7 @@
                                 <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
 
                                     <div class="form-control-sm3">
-                                        <label class="text-right" for="text">Número de Ticket</label>
+                                        <label class="text-right" for="text">Número de encuesta</label>
                                         <input id="text" type="text" class="form-control form-control-sm" name="ticket" value="" required autofocus>
 
                                     </div>
@@ -46,8 +46,8 @@
                                             <option value="">Seleccione la oficina</option>
                                             <?php
                                             while ($dataSelect = mysqli_fetch_array($datacat_oficinasSelect)) { ?>
-                                                <option value="<?php echo $dataSelect["num_oficina"]; ?>">
-                                                    <?php echo ($dataSelect["oficina"]); ?>
+                                                <option value="<?php echo $dataSelect["oficina_id"]; ?>">
+                                                    <?php echo ($dataSelect["oficina_nombre"]); ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -61,8 +61,8 @@
                                             <?php
                                             while ($dataSelect = mysqli_fetch_array($datacat_facilitadoresSelect)) { ?>
 
-                                                <option value="<?php echo $dataSelect["id_facilitador"]; ?>">
-                                                    <?php echo ($dataSelect["nombre"]); ?>
+                                                <option value="<?php echo $dataSelect["facilitador_id"]; ?>">
+                                                    <?php echo ($dataSelect["facilitador_nombre"]); ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -76,8 +76,8 @@
                                             <?php
                                             while ($dataSelect = mysqli_fetch_array($datacat_status_aniosSelect)) { ?>
 
-                                                <option value="<?php echo $dataSelect["anio"]; ?>">
-                                                    <?php echo ($dataSelect["anio"]); ?>
+                                                <option value="<?php echo $dataSelect["anio_id"]; ?>">
+                                                    <?php echo ($dataSelect["anio_nombre"]); ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
@@ -92,8 +92,8 @@
                                             <?php
                                             while ($dataSelect = mysqli_fetch_array($datacat_etapaSelect)) { ?>
 
-                                                <option value="<?php echo $dataSelect["id_etapa"]; ?>">
-                                                    <?php echo ($dataSelect["etapa"]); ?>
+                                                <option value="<?php echo $dataSelect["etapa_id"]; ?>">
+                                                    <?php echo ($dataSelect["etapa_nombre"]); ?>
                                                 </option>
                                             <?php } ?>
                                         </select>
