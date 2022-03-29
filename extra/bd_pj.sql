@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS bd_pj;
 USE bd_pj;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -205,5 +206,34 @@ ALTER TABLE `categoria_status_anios`
 --
 ALTER TABLE `categoria_status_anios`
   MODIFY `anio_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `encuestas`
+--
+
+CREATE TABLE `encuestas` (
+  `encuesta_id` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `encuesta_titulo` varchar(150) NOT NULL,
+  `encuesta_descripcion` text(259) NOT NULL,
+  `encuesta_estado` tinyint(1) NOT NULL,
+  `encuesta_fecha_inicio` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `encuesta_fecha_final` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indices de la tabla `encuestas`
+--
+ALTER TABLE `encuestas`
+  ADD PRIMARY KEY (`encuesta_id`),
+  ADD KEY `admin_id` (`admin_id`);
+
+  --
+-- AUTO_INCREMENT de la tabla `encuestas`
+--
+ALTER TABLE `encuestas`
+  MODIFY `encuesta_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 -- --------------------------------------------------------
